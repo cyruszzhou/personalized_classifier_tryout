@@ -8,7 +8,7 @@
   
 - **Rule Extraction:** Employ formal reasoning and Inductive Logic Programming (ILP) techniques to extract potential rules based on the collected features that can determine the sensitivity of a file. Generate multiple potential rules and select the most promising ones based on a specific metric, such as information entropy.
 
-- **Validation:** Apply these rules to a separate validation set of users to evaluate their effectiveness and generalizability. Consider splitting the original user study data into a training set (for rule extraction) and a validation set (for rule testing).
+- **Validation and Initial Weights Assignment:** Apply these rules to a separate validation set of users to evaluate their effectiveness and generalizability. This process also serves to assign initial weights (votes) to the rules, based on the satisfying states of the rules. Consider splitting the original user study data into a training set (for rule extraction) and a validation set (for initial weight assignment and rule testing).
 
 ### 2. Group Recommendations for Sensitive Files
 
@@ -16,7 +16,7 @@
 
 - **Rule Extraction:** Use formal reasoning and ILP techniques to derive potential rules that determine the groupings of sensitive files. Generate a pool of rules and select the most effective ones using an appropriate metric, like information entropy.
 
-- **Validation:** Validate these rules on a separate validation set of users to test their accuracy and generalizability. As with the Individual Sensitive File Detection section, consider splitting the original user study data into training and validation sets.
+- **Validation and Initial Weights Assignment:** Validate these rules on a separate validation set of users to test their accuracy and generalizability. Similar to the process in Individual Sensitive File Detection, this process also serves to assign initial weights to the rules. As with the Individual Sensitive File Detection section, consider splitting the original user study data into training and validation sets.
 
 ## B. Reinforcement Learning Phase
 
