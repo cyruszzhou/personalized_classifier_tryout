@@ -1,10 +1,13 @@
 # Proposal for Rule Initialization and Adjustment for Sensitive File Detection and Group Recommendation in Cloud Storage
 
 ## Motivation:
-Modifying the existing classifier for different users (i.e., different decision trees) poses a constrained scope problem. Furthermore, the adjustments to the branches are nebulous, as they need to be defined for each feature extracted. Current XGBoost trees seem to lack precision, akin to a "throwing spaghetti at the wall to see what sticks" strategy, raising questions about their interpretability. [Complete with further challenges associated with XGBoost.]
+Adjusting the existing classifier to accommodate varying user needs (i.e., different decision trees) presents a problem of limited applicability, as it is impractical to create unique models for each user's individual preferences. Moreover, the quantification of adjustments to the branches is undefined, necessitating case-by-case calibration based on each feature extracted. The current application of XGBoost trees seems to operate on a trial-and-error basis, akin to "throwing spaghetti at the wall to see what sticks". This approach obscures interpretability, inhibiting understanding of which factors most significantly contribute to the sensitivity prediction. Additionally, XGBoost’s sensitivity to hyperparameters and the potential for overfitting due to its complexity exacerbates these challenges, leaving room for inaccuracies and an over-reliance on certain features. The lack of innate support for reinforcement learning in tree-based models further limits its capacity for continuous learning and real-time adaptation.
 
-We propose a two-phase solution to overcome these challenges: The Initialization Phase and the Reinforcement Learning Phase.
+Further complicating the situation, we find challenges when considering more data-intensive machine learning methods such as multi-layer perceptrons (MLP). These methods, while powerful, are notoriously data-hungry. They require massive amounts of data to perform accurately, which may prove impractical or even impossible when relying on user studies for data collection. Conducting studies that yield data on a scale sufficient for MLP methods is resource-intensive, both in terms of time and cost.
 
+Moreover, the need for large volumes of data may also infringe on user privacy and raise ethical concerns. Users might be uncomfortable with their sensitive files being used on such a large scale, even if the data is anonymized and secured. This introduces a barrier to gathering sufficient data for MLP or other data-intensive methods to be effectively utilized.
+
+To address these challenges, we propose a structured, two-pronged approach: The Initialization Phase and the Reinforcement Learning Phase. This approach aims to enhance model performance by embedding rule-based learning, bringing a balance between interpretability and prediction power, and adapting to user feedback in real-time for continuous improvement.
 
 ## A. Initialization Phase
 
