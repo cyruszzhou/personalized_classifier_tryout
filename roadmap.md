@@ -17,7 +17,7 @@ To address these challenges, we propose a structured, two-pronged approach: The 
   
 - **Rule Extraction:**  Leverage formal reasoning / Inductive Logic Programming (ILP) methodologies to extract potential rules based on these features to determine a file's sensitivity. Select the most promising rules from a plethora of potential ones using a metric like information entropy.
 
-- **Validation and Initial Weights Assignment:** Implement these rules on a distinct validation user set to ascertain their effectiveness and applicability. This process also enables initial weights (votes) assignment to the rules, taking into account the satisfying states of these rules. We suggest partitioning the original user study data into training and validation sets for rule extraction and testing respectively.
+- **Validation and Initial Weights Assignment:** Implement these rules on a distinct validation user set to ascertain their effectiveness and applicability. This process also enables initial weights (votes) assignment to the rules, taking into account the satisfying states of these rules. We suggest partitioning the original user study data into training and validation sets for rule extraction and rule weight/vote initialization, separately.
 
 ### 2. Group Recommendations for Sensitive Files
 
